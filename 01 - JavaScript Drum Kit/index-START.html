@@ -72,15 +72,11 @@
     audio.play();
     // Adding the "playing" class to the key element when associated key is pressed
     key.classList.add('playing');
+    // Remove the 'playing' class from the class list of the key pressed
+    setTimeout( () => key.classList.remove('playing'), 100);
   })
 
-  // Selecting all keys
-  const keys = document.querySelectorAll('.key');
-  // Adding event listener for all the keys to remove the 'playing' class when the transition is ended
-  keys.forEach(key => key.addEventListener('transitionend', function(e) {
-    if (e.propertyName !== 'transform') return;
-    this.classList.remove('playing');
-  }))
+
 
 </script>
 
